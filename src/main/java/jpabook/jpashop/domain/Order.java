@@ -16,7 +16,9 @@ public class Order {
     @ManyToOne
     @JoinColumn(name = "member_id")
     private Member member;
-
+    @OneToOne
+    @JoinColumn(name = "delivery_id")
+    private Delivery delivery;
     @OneToMany(mappedBy = "order")
     private List<OrderItem> orderItems = new ArrayList<>(); // 비지니스적으로 의미있을 가능성 높음.
 
